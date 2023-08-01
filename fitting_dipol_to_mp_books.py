@@ -470,7 +470,7 @@ if __name__ == '__main__':
         number_of_db_files_in_path = len([i for i in files if '.db' in i[-3:]])
         for db_name in files:  
             # if '.db' in db_name[-3:] and not 'mp_books_no_frontal_electrodes' in path and number_of_db_files_in_path==1:
-            if '.db' in db_name[-3:] and not 'mp_books_no_frontal_electrodes' in path:
+            if '.db' in db_name[-3:] and os.path.basename(path)=='mp_books':
                 paths_to_db = os.path.join(path,db_name)
 
                 name_of_the_subject = os.path.dirname(os.path.dirname(path)).split('/')[-1]
