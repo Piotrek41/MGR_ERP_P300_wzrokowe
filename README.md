@@ -5,7 +5,7 @@ Wymagane biblioteki są zawarte w pliku *\requirements.txt*
 
 
 ### Instatlacja biliotek
-$ pip install -r requirements.txt command 
+$ pip install -r requirements.txt 
 
 ## Streszczenie
 
