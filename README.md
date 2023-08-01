@@ -146,7 +146,7 @@ odcinka, przynależności do target/nontarget. Następnie przypisuje znaki
 atomu. Algorytm następnie dopasowuje dipol do każdego z atomów na
 podstawie tak pozmienianych amplitud. Policzone parametry dipoli
 rozszerzone o parametry atomów do których zostały dopasowane zapisywane
-są do plików *\*.pkl* w folderze dipol, 
+są do plików *\*.pkl* w folderze dipol utworzonym 
 w podfolderze ścieżki do pliku \*.db .
 
 Przykład wczytywania i obchodzenia się z danymi z tak utworzonego pliku
