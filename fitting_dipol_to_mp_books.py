@@ -480,9 +480,9 @@ if __name__ == '__main__':
                 row =rows.index(name_of_the_subject)
                 rows[row]='X'
 
-                if 11>=row>=10:
+                if row>=0:
 
-                    outdir = os.path.join("/mnt/c/Users/Piotr/Desktop/XD/whatever",names[row][0])
+                    outdir = os.path.join(os.path.dirname(path),'dipol')
                     try:
                         os.makedirs(outdir) 
                     except OSError:
