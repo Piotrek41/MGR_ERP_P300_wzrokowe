@@ -163,7 +163,9 @@ def reshapeing_data_for_mp(epoch_data,sampling_freq,resampling_freq, resample = 
     return epoch_data_for_mp[0]
 
 def run_mp(filelist,chnls_to_clusterize,default_chnls_to_draw,row=None, last_n=None, first_n=None):
-    # wybieram tylko pliki typu -epo.fif
+
+    #######################reading data from *.fif files##########################
+    
     fifpath_list = [filepath for filepath in filelist if "-epo.fif" in filepath]
 
     epochs_list = []
@@ -246,7 +248,8 @@ def run_mp(filelist,chnls_to_clusterize,default_chnls_to_draw,row=None, last_n=N
         os.makedirs(outdir)
     except OSError:
         pass
-##########################################################################################
+################################converting data into lists/arrays##########################################################
+
     # chnames = [i for i in default_chnls_to_draw if 'F' not in i and 'T3' not in i and 'T4' not in i] 
     chnames = default_chnls_to_draw
     # for tag in epochs_list[0][0] + epochs_list[0][1]: #epochlist
@@ -278,7 +281,7 @@ def run_mp(filelist,chnls_to_clusterize,default_chnls_to_draw,row=None, last_n=N
     # # epoch_data = [np.concatenate((epoch_data[0],epoch_data[2]),axis=0),np.concatenate((epoch_data[1],epoch_data[3]),axis=0)]
     epoch_data = [np.concatenate([epoch_data[i] for i in range(0,len(epoch_data),2)],axis=0), np.concatenate([epoch_data[i] for i in range(1,len(epoch_data),2)],axis=0)]
     # # print(epoch_data[0].shape,epoch_data[1].shape)
-
+    ##############################################################################
 
     # '''epoch_data is a lis of shape: e.g. (2:100:21:819) or [(90:21:819),(100,21,819)] so be careful when using np.array(channels_data) because 90 and 100 are of different sizes'''
     # # print(np.array(epoch_data[0]).shape)
