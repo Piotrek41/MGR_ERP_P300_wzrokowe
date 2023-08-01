@@ -537,6 +537,7 @@ def main(atom_db_path,row, name, outdir,diag):
     return pvalue,[0,0],Z,p_adjusted,M,M1,[[i[0] for i in stata_wybrane],chosen_atoms_freqs],Z,Z1
 
 if __name__ == '__main__':
+    ########### diagnosis of patients is read from this *.csv file#######################
     data = pd.read_csv("/mnt/c/Users/Piotr/Desktop/pliki_pulpit/budzik/p300-wzrokowe/Measurements_database_merged.csv")
     data = data.loc[data['measurement_type']=='p300-wzrokowe']
     names=np.array(data[['person_id','diag']])
@@ -559,7 +560,7 @@ if __name__ == '__main__':
                 paths_to_db = os.path.join(path,db_name)
 
                 temp = os.path.dirname(os.path.dirname(path)).split('/')[-1]
-                row =rows.index(temp)
+                row =rows.index(temp) #it is a number_of_row-1 from the *.csv file
                 rows[row]='X'
                 if row>=0:
                 # if row in [4,38,5,30,53,31,8,24,2,17,19,43,46,34,45,37]:                    
