@@ -1,7 +1,7 @@
 # MGR_ERP_P300_wzrokowe --- Opis i działanie skryptów
 
 ## Wymagane biblioteki
-Wymagane biblioteki są zawarte w pliku *\*requirements.txt*
+Wymagane biblioteki są zawarte w pliku *\requirements.txt*
 
 
 ### Instatlacja biliotek
